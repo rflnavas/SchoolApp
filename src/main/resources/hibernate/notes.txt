@@ -1,0 +1,9 @@
+If we get this trace beginning with:
+antlr.collections.AST.getLine()I
+    java.lang.NoSuchMethodError
+
+Exclude the struts1.x dependency from your project
+
+Problem here is there is a conflict between the two ANT jar files(namely: antlr-2.7.6.jar from Hibernate Jar library & antlr-2.7.2 from struts-1.3) in your project. This appears to be a peculiar problem with Struts-1.3 & Hibernate applications.
+
+Please remove antlr-2.7.2.jar from your project(/WEB-INF/lib folder)& it should work fine..
